@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white_color: #FFFFFF;
+    --purple_color: #B072FF;
+    --wrapper_width: 500px;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+}
+
+label {
+    margin-right: 10px;
+    width: 50%;
+}
+
+.field {
+    max-width: var(--wrapper_width);
+    margin-bottom: 20px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.field, #btn {
+    height: 50px;
+}
+
+input {
+    min-width: calc(var(--wrapper_width) / 2);
+    min-height: 50px;
+    background-color: #EEEEEE;
+    border: none;
+    border-bottom: 4px solid #BBBBBB;
+    font-size: 1.3rem;
+    padding-left: 1em;
+    overflow: hidden;
+}
+
+input:focus {
+    outline: none;
+    background-color: #DDDDDD;
+}
+
+input::placeholder {
+    transition: all 200ms ease 0ms;
+}
+
+input:focus::placeholder {
+    opacity: 0;
+}
+
+#wrapper {
+    min-width: var(--wrapper_width);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn {
+    width: calc(var(--wrapper_width) / 2);
+    background-color: var(--purple_color);
+    color: var(--white_color);
+    font-size: 1.3rem;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 500ms ease, color 500ms ease;
+}
+
+#btn:hover {
+    background-color: var(--white_color);
+    color: var(--purple_color);
+    border: solid 2px var(--purple_color);
+}
+
+#error {
+    width: var(--wrapper_width);
+    color: red;
+    text-align: center;
+}
+
+.card-image {
+    width: calc(var(--wrapper_width) / 2);
+    height: calc(var(--wrapper_width) / 2);
+}
+
+#result {
+    min-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+#load_animation {
+    display: inline-block;
+    width: 80px;
+    height: 100%;
+}
+
+#load_animation::after {
+    content: " ";
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: #315efb transparent #315efb transparent;
+    animation: load_animation 1.2s linear infinite;
+}
+
+@keyframes load_animation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
