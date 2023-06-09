@@ -37,9 +37,6 @@ btn.addEventListener('click', () => {
                 })
 
             .catch(() => {
-                localStorage.removeItem("last_user_request");
-                localStorage.removeItem("page_number_input");
-                localStorage.removeItem("limit_input");
                 errorNode.textContent = "Ошибка сервера!";
             })
             .finally(()=> {
